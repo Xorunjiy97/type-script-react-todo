@@ -1,0 +1,65 @@
+.container__list-wrapper{
+    height: 300px;
+    overflow: auto;
+}
+
+.input-wrapper__text {
+    min-width: 500px;
+    min-height: 25px;
+    font-family: "Nerko One", cursive;
+    font-size: 25px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+}
+
+.container__list-wrapper {
+    text-align: center; 	
+}
+
+.input-wrapper__add-button {
+    height: 33px;
+    width: 60px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer; 
+    padding-top:1px ;
+    font-family: "Nerko One", cursive;
+    font-size: 25px;
+    background-color:rgb(255, 123, 0);
+    outline: none;
+}
+
+.container__input-wrapper {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.list__delete-btn {
+    border: none;
+    border-radius: 10%;
+    cursor: pointer; 
+    font-family: "Nerko One", cursive;
+    font-size: 25px;
+    outline: none;
+    background-color:rgb(255, 123, 0);
+}
+
+.tasks__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    color:rgb(255, 123, 0);
+    padding: 20px;
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through black 4px;   
+        
+}
+
+.list__text {
+    cursor: pointer;
+}
