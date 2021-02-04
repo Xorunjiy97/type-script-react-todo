@@ -1,33 +1,36 @@
 import React,{ useState, useCallback, } from 'react';
-
+import * as types from './types/types'
 import Task from './components/Task.js';
 import './todoAppStyle.css'
 
-const ToDo: React.FC = props => {
+export interface Props {
+    tasks: any;
+    saveTask: any;
+    deleteTask: Function;
+}
+
+const ToDo: React.FC<Props> = props => {
     const {
         tasks,
-        taskDone,
         saveTask,
         deleteTask,
     } = props
 
     const [taskText, setTaskText] = useState<string>('');
 
-    const onSaveTask = useCallback(event => {
+    const onSaveTask = useCallback((event: React.MouseEvent<HTMLButtonElement> ): void => {
         event.preventDefault();
 
-        const task = {
+        const task: types.taskType = {
             id: new Date().getTime(),
             text: taskText,
-            isOpen: true,
-            isCompleted: false,
         }
 
         saveTask(task);
         setTaskText('');
     }, [taskText]);
 
-     const onChangeText = useCallback((event: React.ChangeEvent<HTMLInputElement> ) => {
+     const onChangeText = useCallback((event: React.ChangeEvent<HTMLInputElement> ): void => {
         setTaskText(event.target.value)
      }, [setTaskText]);
 
@@ -48,15 +51,13 @@ const ToDo: React.FC = props => {
             <div className='container__list-wrapper'>
                 <ul className='list-wrapper__tasks'>
                     { tasks.length ?
-                        tasks.map((task) =>
-                            task.isOpen ?
+                        tasks.map((task: types.taskType) =>
+
                             <Task id={task.id}
                                   key={task.id}
                                   text ={task.text}
-                                  taskDone={taskDone}
                                   deleteTask={deleteTask}
-                                  isCompleted={task.isCompleted}
-                            /> : null )
+                            />  )
                         : null
                     }
                 </ul>

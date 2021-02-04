@@ -9,7 +9,7 @@ const initialState: InitialStateType = {
     tasks: [],
 };
 
-export default(state = initialState,action: any): InitialStateType => {
+const reducer = (state = initialState,action: any): InitialStateType => {
     const {type, data} = action;
 
     switch(type) {
@@ -32,3 +32,4 @@ export default(state = initialState,action: any): InitialStateType => {
             return state;        
     }
 }
+export default reducer;

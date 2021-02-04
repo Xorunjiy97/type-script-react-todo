@@ -6,7 +6,7 @@ export type DeleteTaskType = {
     type: ActionTypes.DELETE_TASK;
     data: types.taskType;
 }
-export const deleteTask = (data: types.taskType): DeleteTaskType => ({
+export const onDeleteTask = (data: types.taskType): DeleteTaskType => ({
     type: ActionTypes.DELETE_TASK,
     data,
 })
